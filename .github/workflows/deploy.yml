@@ -67,7 +67,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: View context attributes
+      - name: Create tag
         uses: actions/github-script@v6
         with:
           script: |
@@ -77,3 +77,20 @@ jobs:
               ref: 'refs/tags/${{ needs.check.outputs.tag }}',
               sha: context.sha
             })
+
+      - name: Create a Release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          tag_name: ${{ needs.check.outputs.tag }}
+          release_name: ${{ needs.check.outputs.tag }}
+          draft: false
+          prerelease: false
+          body: |
+            Automated via `./github/workflows/build-deploy.yml`
+
+            - Author: **@${{ github.actor }}**
+            - Version: `${{ env.PACKAGE_VERSION }}`
+            - Release Type: `${{ needs.check.outputs.versionType }}`
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
