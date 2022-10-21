@@ -178,7 +178,6 @@ jobs:
 
   check:
     name: 🚦 Check
-    needs: [lint, typecheck, vitest, cypress]
     runs-on: ubuntu-latest
     outputs:
       isNewerVersion: ${{ steps.compare.outputs.isNewerVersion }}
