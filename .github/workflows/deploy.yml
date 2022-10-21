@@ -70,4 +70,10 @@ jobs:
       - name: View context attributes
         uses: actions/github-script@v6
         with:
-          script: console.log(context)
+          script: |
+            github.rest.git.createRef({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              ref: 'refs/tags/${{ needs.check.outputs.tag }}',
+              sha: context.sha
+            })
