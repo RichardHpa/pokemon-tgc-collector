@@ -1,7 +1,7 @@
 {
   "name": "pokemon-tgc-collector",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
+  "private": false,
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
