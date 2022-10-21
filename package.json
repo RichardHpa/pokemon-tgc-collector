@@ -1,5 +1,6 @@
 {
   "name": "pokemon-tgc-collector",
+  "version": "0.0.0",
   "private": true,
   "sideEffects": false,
   "scripts": {
@@ -42,6 +43,8 @@
     "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
     "@faker-js/faker": "^7.5.0",
     "@remix-run/dev": "^1.7.2",
     "@remix-run/eslint-config": "^1.7.2",
@@ -75,6 +78,7 @@
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "prisma": "^4.3.1",
+    "semver": "^7.3.8",
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.1.8",
     "ts-node": "^10.9.1",
