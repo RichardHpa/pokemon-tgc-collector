@@ -1,11 +1,13 @@
 {
   "name": "pokemon-tgc-collector",
+  "version": "0.0.0",
   "private": true,
   "sideEffects": false,
   "scripts": {
     "build": "run-s build:*",
     "build:css": "npm run generate:css -- --minify",
     "build:remix": "remix build",
+    "build:ci": "CI=true npm run build:remix && npm pack --filename=package.tgz",
     "dev": "run-p dev:*",
     "dev:css": "npm run generate:css -- --watch",
     "dev:remix": "cross-env NODE_ENV=development binode --require ./mocks -- @remix-run/dev:remix dev",
@@ -20,7 +22,8 @@
     "pretest:e2e:run": "npm run build",
     "test:e2e:run": "cross-env PORT=8811 start-server-and-test start:mocks http://localhost:8811 \"npx cypress run\"",
     "typecheck": "tsc -b && tsc -b cypress",
-    "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run"
+    "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
+    "prepare": "husky install"
   },
   "prettier": {},
   "eslintIgnore": [
@@ -41,6 +44,8 @@
     "tiny-invariant": "^1.2.0"
   },
   "devDependencies": {
+    "@actions/core": "^1.10.0",
+    "@actions/github": "^5.1.1",
     "@faker-js/faker": "^7.5.0",
     "@remix-run/dev": "^1.7.2",
     "@remix-run/eslint-config": "^1.7.2",
@@ -66,12 +71,15 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
     "happy-dom": "^6.0.4",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "msw": "^0.47.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.16",
     "prettier": "2.7.1",
     "prettier-plugin-tailwindcss": "^0.1.13",
     "prisma": "^4.3.1",
+    "semver": "^7.3.8",
     "start-server-and-test": "^1.14.0",
     "tailwindcss": "^3.1.8",
     "ts-node": "^10.9.1",
@@ -86,5 +94,9 @@
   },
   "prisma": {
     "seed": "ts-node --require tsconfig-paths/register prisma/seed.ts"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx}": "npx eslint --fix",
+    "**/*.{ts,tsx}": "npx tsc-files --noEmit"
   }
 }
