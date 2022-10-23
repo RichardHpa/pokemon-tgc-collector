@@ -70,7 +70,7 @@
     "eslint": "^8.23.1",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",
-    "happy-dom": "^6.0.4",
+    "happy-dom": "^7.6.0",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "msw": "^0.47.3",
