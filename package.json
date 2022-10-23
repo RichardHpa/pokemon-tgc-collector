@@ -47,7 +47,7 @@
     "@actions/core": "^1.10.0",
     "@actions/github": "^5.1.1",
     "@faker-js/faker": "^7.5.0",
-    "@remix-run/dev": "^1.7.2",
+    "@remix-run/dev": "^1.7.3",
     "@remix-run/eslint-config": "^1.7.2",
     "@testing-library/cypress": "^8.0.3",
     "@testing-library/dom": "^8.18.1",
