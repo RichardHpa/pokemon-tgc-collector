@@ -5,7 +5,8 @@ import { baseClasses } from "~/components/Button/baseClasses";
 
 import type { ButtonProps } from "~/components/Button/types";
 import type { colors } from "~/types/colors";
-interface IconButtonProps extends Omit<ButtonProps, "children" | "color"> {
+interface IconButtonProps
+  extends Omit<ButtonProps, "children" | "color" | "full"> {
   icon: JSX.Element;
   color?: colors | "inherit";
 }

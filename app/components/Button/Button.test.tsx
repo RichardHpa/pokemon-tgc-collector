@@ -46,6 +46,11 @@ describe("Button", () => {
     expect(screen.getByRole("button")).toHaveClass(expected);
   });
 
+  test("renders Button with full", () => {
+    render(<Button full>Test</Button>);
+    expect(screen.getByRole("button")).toHaveClass("w-full");
+  });
+
   test("renders Button snapshot", () => {
     const { container } = render(<Button />);
     expect(container).toMatchSnapshot();

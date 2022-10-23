@@ -3,6 +3,8 @@ import { json, redirect } from "@remix-run/node";
 import { Form, Link, useActionData, useSearchParams } from "@remix-run/react";
 import * as React from "react";
 
+import { Button } from "~/components/Button";
+
 import { createUserSession, getUserId } from "~/session.server";
 import { verifyLogin } from "~/models/user.server";
 import { safeRedirect, validateEmail } from "~/utils";
@@ -138,12 +140,9 @@ export default function LoginPage() {
           </div>
 
           <input type="hidden" name="redirectTo" value={redirectTo} />
-          <button
-            type="submit"
-            className="w-full rounded bg-blue-500  py-2 px-4 text-white hover:bg-blue-600 focus:bg-blue-400"
-          >
+          <Button full type="submit">
             Log in
-          </button>
+          </Button>
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <input

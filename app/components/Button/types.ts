@@ -9,4 +9,5 @@ export type ButtonProps = {
   variant?: variant;
   disabled?: boolean;
   onClick?: MouseEventHandler;
+  full?: boolean;
 } & React.ComponentPropsWithoutRef<"button">;

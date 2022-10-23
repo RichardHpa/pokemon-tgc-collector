@@ -1,12 +1,23 @@
-import clsx from 'clsx'
-import React from 'react'
+import clsx from "clsx";
+import React from "react";
 
-import { baseClasses } from './baseClasses'
+import { baseClasses } from "./baseClasses";
 
-import type { ButtonProps } from './types'
+import type { ButtonProps } from "./types";
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ color = 'primary', className, variant = 'solid', disabled, onClick, ...props }, ref) => {
+  (
+    {
+      color = "primary",
+      className,
+      variant = "solid",
+      disabled,
+      onClick,
+      full = false,
+      ...props
+    },
+    ref
+  ) => {
     return (
       <button
         disabled={disabled}
@@ -16,12 +27,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
           baseClasses.base,
           baseClasses.variant[variant][color],
           { [baseClasses.disabled]: disabled },
-          className,
+          { [baseClasses.full]: full },
+          className
         )}
         {...props}
       />
-    )
-  },
-)
+    );
+  }
+);
 
-Button.displayName = 'Button'
+Button.displayName = "Button";
