@@ -1,5 +1,5 @@
 export const baseClasses = {
-  base: "inline-flex py-2 px-4 rounded align-middle justify-center items-center",
+  base: "inline-flex py-2 px-4 rounded justify-center items-center",
   disabled: "opacity-50 cursor-not-allowed pointer-events-none",
   full: "w-full",
   variant: {
@@ -12,12 +12,13 @@ export const baseClasses = {
     },
     outline: {
       primary:
-        "text-blue-500 hover:bg-blue-500 hover:text-white border-blue-500",
+        "box-border text-blue-500 hover:bg-blue-500 hover:text-white border-blue-500 border py-[calc(0.5rem-1px)]",
       secondary:
-        "text-gray-500 hover:bg-gray-500 hover:text-white border-gray-500",
-      danger: "text-red-500 hover:bg-red-500 hover:text-white border-red-500",
+        "text-gray-500 hover:bg-gray-500 hover:text-white border-gray-500 border py-[calc(0.5rem-1px)]",
+      danger:
+        "text-red-500 hover:bg-red-500 hover:text-white border-red-500 border py-[calc(0.5rem-1px)]",
       inherit:
-        "text-inherit-500 hover:bg-inherit-500 hover:text-white border-inherit-500",
+        "text-inherit-500 hover:bg-inherit-500 hover:text-white border-inherit-500 border py-[calc(0.5rem-1px)]",
     },
     ghost: {
       primary:

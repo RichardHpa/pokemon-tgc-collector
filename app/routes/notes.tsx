@@ -2,6 +2,8 @@ import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
 import { Form, Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 
+import { Button } from "~/components/Button";
+
 import { requireUserId } from "~/session.server";
 import { useUser } from "~/utils";
 import { getNoteListItems } from "~/models/note.server";
@@ -24,12 +26,9 @@ export default function NotesPage() {
         </h1>
         <p>{user.email}</p>
         <Form action="/logout" method="post">
-          <button
-            type="submit"
-            className="rounded bg-slate-600 py-2 px-4 text-blue-100 hover:bg-blue-500 active:bg-blue-600"
-          >
+          <Button type="submit" color="secondary">
             Logout
-          </button>
+          </Button>
         </Form>
       </header>
 
