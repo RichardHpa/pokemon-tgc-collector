@@ -91,7 +91,7 @@ export default function LoginPage() {
             name="email"
             required
             ref={emailRef}
-            error={actionData?.errors?.email}
+            error={actionData?.errors?.email || undefined}
             autoFocus={true}
             type="email"
             autoComplete="email"
@@ -102,7 +102,7 @@ export default function LoginPage() {
             name="password"
             required
             ref={passwordRef}
-            error={actionData?.errors?.password}
+            error={actionData?.errors?.password || undefined}
             autoFocus={true}
             type="password"
             autoComplete="current-password"

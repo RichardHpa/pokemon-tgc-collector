@@ -5,8 +5,7 @@ import type { InputFieldProps } from "./types";
 export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
   (
     {
-      className,
-      disabled,
+      disabled = false,
       error,
       label,
       type = "text",
@@ -37,6 +36,7 @@ export const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
             aria-invalid={error ? true : undefined}
             aria-describedby={`${name || label}-error`}
             className="w-full rounded border border-gray-500 px-2 py-1 text-lg"
+            disabled={disabled}
           />
           {error && (
             <div className="pt-1 text-red-700" id={`${name || label}-error`}>
