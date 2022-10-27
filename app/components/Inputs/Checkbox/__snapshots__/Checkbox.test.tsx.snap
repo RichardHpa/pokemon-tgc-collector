@@ -1,0 +1,26 @@
+// Vitest Snapshot v1
+
+exports[`Checkbox > renders Checkbox snapshot 1`] = `
+<div>
+  <div>
+    <div
+      class="flex items-center"
+    >
+      <input
+        aria-describedby="checkbox-error"
+        class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+        id="checkbox"
+        name="checkbox"
+        type="checkbox"
+      />
+      <label
+        class="ml-2 block cursor-pointer text-sm text-gray-900"
+        for="checkbox"
+      >
+        checkbox
+         
+      </label>
+    </div>
+  </div>
+</div>
+`;
