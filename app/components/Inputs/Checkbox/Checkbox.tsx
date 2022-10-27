@@ -2,7 +2,10 @@ import { forwardRef } from "react";
 
 import type { InputFieldProps } from "../InputField/types";
 
-export const Checkbox = forwardRef<HTMLInputElement, InputFieldProps>(
+export const Checkbox = forwardRef<
+  HTMLInputElement,
+  Omit<InputFieldProps, "type">
+>(
   (
     { disabled = false, error, label, name, required = false, ...props },
     ref

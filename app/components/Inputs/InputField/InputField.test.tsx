@@ -4,30 +4,35 @@ import { withMarkup } from "test/helpers/withMarkup";
 
 import { InputField } from "./InputField";
 
+const inputProps = {
+  label: "text field",
+  name: "text-field",
+};
+
 describe("InputField", () => {
   test("renders InputField", () => {
-    render(<InputField label="text field" />);
+    render(<InputField {...inputProps} />);
     expect(screen.getByRole("textbox")).toBeInTheDocument();
   });
 
   test("renders InputField with label", () => {
-    render(<InputField label="text field" />);
+    render(<InputField {...inputProps} />);
     expect(screen.getByText("text field")).toBeInTheDocument();
   });
 
   test("renders InputField with required", () => {
-    const { getByText } = render(<InputField label="text field" required />);
+    const { getByText } = render(<InputField {...inputProps} required />);
     const getByTextWithMarkup = withMarkup(getByText);
     getByTextWithMarkup("text field *");
   });
 
   test("renders InputField with error", () => {
-    render(<InputField label="text field" error="error" />);
+    render(<InputField {...inputProps} error="error" />);
     expect(screen.getByText("error")).toBeInTheDocument();
   });
 
   test("renders InputField snapshot", () => {
-    const { container } = render(<InputField label="text field" />);
+    const { container } = render(<InputField {...inputProps} />);
     expect(container).toMatchSnapshot();
   });
 });

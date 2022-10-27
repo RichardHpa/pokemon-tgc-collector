@@ -5,7 +5,7 @@ exports[`InputField > renders InputField snapshot 1`] = `
   <div>
     <label
       class="block text-sm font-medium text-gray-700"
-      for="text field"
+      for="text-field"
     >
       text field
        
@@ -14,11 +14,11 @@ exports[`InputField > renders InputField snapshot 1`] = `
       class="mt-1"
     >
       <input
-        aria-describedby="text field-error"
+        aria-describedby="text-field-error"
         autocomplete="off"
         class="w-full rounded border border-gray-500 px-2 py-1 text-lg"
-        id="text field"
-        name="text field"
+        id="text-field"
+        name="text-field"
         type="text"
       />
     </div>
