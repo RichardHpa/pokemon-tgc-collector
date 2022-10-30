@@ -30,7 +30,7 @@ describe("Button", () => {
 
   test.each([
     ["primary", "bg-blue-500"],
-    ["secondary", "bg-gray-500"],
+    ["secondary", "bg-emerald-500"],
     ["danger", "bg-red-500"],
   ] as const)("renders Button with color %s", (color, expected) => {
     render(<Button color={color}>Test</Button>);
