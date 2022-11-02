@@ -1,7 +1,8 @@
 import type { LoaderArgs } from "@remix-run/node";
 import { json } from "@remix-run/node";
-import { Form, Link, NavLink, Outlet, useLoaderData } from "@remix-run/react";
+import { Form, NavLink, Outlet, useLoaderData } from "@remix-run/react";
 
+import { Link } from "~/components/Link";
 import { Button } from "~/components/Button";
 
 import { requireUserId } from "~/session.server";
@@ -34,7 +35,7 @@ export default function NotesPage() {
 
       <main className="flex h-full bg-white">
         <div className="h-full w-80 border-r bg-gray-50">
-          <Link to="new" className="block p-4 text-xl text-blue-500">
+          <Link to="new" className="block p-4 text-xl">
             + New Note
           </Link>
 

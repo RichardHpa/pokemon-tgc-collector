@@ -3,9 +3,15 @@ import clsx from "clsx";
 
 import { baseClasses } from "./baseClasses";
 
-import type { ButtonProps } from "./types";
+import type { ButtonProps, OverloadedButtonProps } from "./types";
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
+export const Button = React.forwardRef(
+  ({ as = "button", ...props }: OverloadedButtonProps, ref: any) =>
+    React.createElement(ButtonBase, { as, ref, ...props })
+);
+Button.displayName = "Button";
+
+export const ButtonBase = React.forwardRef<HTMLButtonElement, ButtonProps>(
   (
     {
       color = "primary",
@@ -14,12 +20,13 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       disabled,
       onClick,
       full = false,
+      as: Component = "button",
       ...props
-    },
+    }: ButtonProps,
     ref
   ) => {
     return (
-      <button
+      <Component
         disabled={disabled}
         ref={ref}
         onClick={onClick}
@@ -36,4 +43,4 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   }
 );
 
-Button.displayName = "Button";
+ButtonBase.displayName = "ButtonBase";

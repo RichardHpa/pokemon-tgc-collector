@@ -1,5 +1,6 @@
 import type { variant } from "~/types/variants";
 import type { colors } from "~/types/colors";
+import type { OverloadedElementProps } from "~/types/overloadedElement";
 
 import type { MouseEventHandler } from "react";
 
@@ -10,4 +11,9 @@ export type ButtonProps = {
   disabled?: boolean;
   onClick?: MouseEventHandler;
   full?: boolean;
-} & React.ComponentPropsWithoutRef<"button">;
+} & React.ComponentPropsWithoutRef<"button"> &
+  OverloadedElementProps;
+
+export type OverloadedButtonProps =
+  | (Required<OverloadedElementProps> & any)
+  | ButtonProps;
