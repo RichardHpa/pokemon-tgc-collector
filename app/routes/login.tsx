@@ -1,8 +1,9 @@
 import type { ActionArgs, LoaderArgs, MetaFunction } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
-import { Form, Link, useActionData, useSearchParams } from "@remix-run/react";
+import { Form, useActionData, useSearchParams } from "@remix-run/react";
 import * as React from "react";
 
+import { Link } from "~/components/Link";
 import { Button } from "~/components/Button";
 import { InputField, Checkbox } from "~/components/Inputs";
 
@@ -118,7 +119,6 @@ export default function LoginPage() {
             <div className="text-center text-sm text-gray-500">
               Don't have an account?{" "}
               <Link
-                className="text-blue-500 underline"
                 to={{
                   pathname: "/join",
                   search: searchParams.toString(),
