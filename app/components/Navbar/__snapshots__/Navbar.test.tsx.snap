@@ -1,0 +1,45 @@
+// Vitest Snapshot v1
+
+exports[`NavLink > renders NavLink snapshot 1`] = `
+<div>
+  <a
+    class="'text-gray-700 hover:underline' rounded-md px-3 py-2 text-sm font-medium hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-100"
+    href="/sets"
+  >
+    Sets
+  </a>
+</div>
+`;
+
+exports[`Navbar > renders Navbar snapshot 1`] = `
+<div>
+  <nav
+    class="border-gray-200 px-2 py-2.5 sm:px-4"
+  >
+    <div
+      class="container mx-auto flex flex-wrap items-center justify-between border-b py-2"
+    >
+      <div
+        class="flex"
+      >
+        <a
+          class="mr-8 flex p-0 text-2xl tracking-tighter text-gray-700 no-underline dark:text-white"
+          href="/"
+        >
+          <span
+            class="inline-block font-medium"
+          >
+            Pokemon Card Checker
+          </span>
+        </a>
+        <a
+          class="'text-gray-700 hover:underline' rounded-md px-3 py-2 text-sm font-medium hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-100"
+          href="/sets"
+        >
+          Sets
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

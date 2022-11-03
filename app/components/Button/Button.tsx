@@ -5,7 +5,7 @@ import { baseClasses } from "./baseClasses";
 
 import type { ButtonProps, OverloadedButtonProps } from "./types";
 
-export const Button = React.forwardRef(
+export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ as = "button", ...props }: OverloadedButtonProps, ref: any) =>
     React.createElement(ButtonBase, { as, ref, ...props })
 );

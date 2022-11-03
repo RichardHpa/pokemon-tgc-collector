@@ -11,6 +11,7 @@ export type ButtonProps = {
   disabled?: boolean;
   onClick?: MouseEventHandler;
   full?: boolean;
+  children: React.ReactNode;
 } & React.ComponentPropsWithoutRef<"button"> &
   OverloadedElementProps;
 
