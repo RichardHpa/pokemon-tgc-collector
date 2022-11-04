@@ -1,24 +1,16 @@
 /** @type {import('@types/eslint').Linter.BaseConfig} */
 module.exports = {
-  extends: [
-    "@remix-run/eslint-config",
-    "@remix-run/eslint-config/node",
-    "@remix-run/eslint-config/jest-testing-library",
-    "prettier",
-  ],
+  extends: ["@remix-run/eslint-config", "@remix-run/eslint-config/node", "@remix-run/eslint-config/jest-testing-library", "prettier", "plugin:storybook/recommended"],
   env: {
-    "cypress/globals": true,
+    "cypress/globals": true
   },
   rules: {
-    "no-unused-vars": [
-      "error",
-      {
-        vars: "all",
-        args: "after-used",
-        ignoreRestSiblings: true,
-        argsIgnorePattern: "^_",
-      },
-    ],
+    "no-unused-vars": ["error", {
+      vars: "all",
+      args: "after-used",
+      ignoreRestSiblings: true,
+      argsIgnorePattern: "^_"
+    }]
   },
   plugins: ["cypress"],
   // we're using vitest which has a very similar API to jest
@@ -26,7 +18,7 @@ module.exports = {
   // set the jest version.
   settings: {
     jest: {
-      version: 28,
-    },
-  },
+      version: 28
+    }
+  }
 };

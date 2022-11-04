@@ -8,28 +8,33 @@ export const baseClasses = {
       secondary:
         "bg-emerald-500 text-white hover:bg-emerald-600 border-emerald-500",
       danger: "bg-red-500 text-white hover:bg-red-600 border-red-500",
-      inherit:
-        "bg-inherit-500 text-white hover:bg-inherit-600 border-inherit-500",
+      neutral: "bg-gray-500 text-white hover:bg-gray-600 border-gray-500",
     },
     outline: {
       primary:
-        "box-border text-blue-500 hover:bg-blue-500 hover:text-white border-blue-500 border py-[calc(0.5rem-1px)]",
+        "text-blue-500 hover:bg-blue-50 border-blue-500 border py-[calc(0.5rem-1px)]",
       secondary:
-        "text-emerald-500 hover:bg-emerald-500 hover:text-white border-emerald-500 border py-[calc(0.5rem-1px)]",
+        "text-emerald-500 hover:bg-emerald-50 border-emerald-500 border py-[calc(0.5rem-1px)]",
       danger:
-        "text-red-500 hover:bg-red-500 hover:text-white border-red-500 border py-[calc(0.5rem-1px)]",
-      inherit:
-        "text-inherit-500 hover:bg-inherit-500 hover:text-white border-inherit-500 border py-[calc(0.5rem-1px)]",
+        "text-red-500 hover:bg-red-50 border-red-500 border py-[calc(0.5rem-1px)]",
+      neutral:
+        "text-gray-500 hover:bg-gray-50 border-gray-500 border py-[calc(0.5rem-1px)]",
     },
     ghost: {
       primary:
-        "text-blue-500 hover:bg-blue-500 hover:text-white border-transparent hover:bg-opacity-25",
+        "text-blue-500 hover:bg-blue-500 border-transparent hover:bg-opacity-5",
       secondary:
-        "text-emerald-500 hover:bg-emerald-500 hover:text-white border-transparent hover:bg-opacity-25",
+        "text-emerald-500 hover:bg-emerald-500 border-transparent hover:bg-opacity-5",
       danger:
-        "text-red-500 hover:bg-red-500 hover:text-white border-transparent hover:bg-opacity-25",
-      inherit:
-        "text-inherit-500 hover:bg-inherit-500 hover:text-inherit-500 border-transparent hover:bg-opacity-25",
+        "text-red-500 hover:bg-red-500 border-transparent hover:bg-opacity-5",
+      neutral:
+        "text-gray-500 hover:bg-gray-500 border-transparent hover:bg-opacity-5",
+    },
+    text: {
+      primary: "text-blue-500",
+      secondary: "text-emerald-500",
+      danger: "text-red-500",
+      neutral: "text-gray-500",
     },
   },
 };

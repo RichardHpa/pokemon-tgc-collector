@@ -5,9 +5,12 @@ import { baseClasses } from "./baseClasses";
 
 import type { ButtonProps, OverloadedButtonProps } from "./types";
 
-export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ as = "button", ...props }: OverloadedButtonProps, ref: any) =>
-    React.createElement(ButtonBase, { as, ref, ...props })
+// NOTE: This isn't actually working as expected yet. If I switch OverloadedButtonProps with ButtonProps then all of the components that use `as` doesn't warn you if you are missing any of the button props. I might need to remove the forwardRef of a basic button and fully type the component if I want this to work properly.
+export const Button = React.forwardRef<
+  HTMLButtonElement,
+  OverloadedButtonProps
+>(({ as = "button", ...props }: OverloadedButtonProps, ref: any) =>
+  React.createElement(ButtonBase, { as, ref, ...props })
 );
 Button.displayName = "Button";
 
