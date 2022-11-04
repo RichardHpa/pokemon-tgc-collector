@@ -53,7 +53,7 @@
     "@babel/core": "^7.19.6",
     "@faker-js/faker": "^7.5.0",
     "@remix-run/dev": "^1.7.3",
-    "@remix-run/eslint-config": "^1.7.3",
+    "@remix-run/eslint-config": "^1.7.5",
     "@storybook/addon-actions": "^6.5.13",
     "@storybook/addon-essentials": "^6.5.13",
     "@storybook/addon-interactions": "^6.5.13",
