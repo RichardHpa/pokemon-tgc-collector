@@ -5,15 +5,21 @@ import type { ComponentStory, ComponentMeta } from "@storybook/react";
 const Template: ComponentStory<typeof Button> = ({ variant, ...args }) => {
   return (
     <>
-      <Button color="primary" variant={variant} {...args}>
-        Primary - {variant}
-      </Button>
-      <Button color="secondary" variant={variant} {...args}>
-        Secondary - {variant}
-      </Button>
-      <Button color="danger" variant={variant} {...args}>
-        Danger - {variant}
-      </Button>
+      <h2 className="text-xl">{variant}</h2>
+      <div className="mt-2 flex space-x-2">
+        <Button color="primary" variant={variant} {...args}>
+          Primary
+        </Button>
+        <Button color="secondary" variant={variant} {...args}>
+          Secondary
+        </Button>
+        <Button color="danger" variant={variant} {...args}>
+          Danger
+        </Button>
+        <Button color="neutral" variant={variant} {...args}>
+          Neutral
+        </Button>
+      </div>
     </>
   );
 };
@@ -31,6 +37,11 @@ Outline.args = {
 export const Ghost = Template.bind({});
 Ghost.args = {
   variant: "ghost",
+};
+
+export const Text = Template.bind({});
+Text.args = {
+  variant: "text",
 };
 
 export default {
