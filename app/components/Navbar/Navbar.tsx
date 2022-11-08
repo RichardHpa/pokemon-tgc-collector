@@ -9,53 +9,42 @@ export const Navbar = () => {
   return (
     <nav className="border-gray-200 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between border-b py-2">
-        <div className="flex items-center">
+        <div className="flex items-center space-x-2">
           <Link
-            className="mr-8 flex p-0 text-2xl tracking-tighter text-gray-700 no-underline dark:text-white"
+            className="flex p-0 text-2xl tracking-tighter text-gray-700 no-underline dark:text-white"
             to="/"
           >
             <span className="inline-block font-medium">
               Pokemon Card Checker
             </span>
           </Link>
-          <NavLink to="/sets">Sets</NavLink>
+
+          <Button as={Link} to="/sets" variant="text" color="neutral">
+            Sets
+          </Button>
         </div>
-        <div className="flex items-center">
+        <div className="flex items-center space-x-2">
           {user ? (
             <>
-              <p>{user.email}</p>
+              <p className="font-medium text-gray-700">{user.email}</p>
               <Form action="/logout" method="post">
-                <Button variant="ghost" type="submit">
+                <Button variant="text" color="neutral" type="submit">
                   Logout
                 </Button>
               </Form>
             </>
           ) : (
             <>
-              <NavLink to="/join">Sign up</NavLink>
-
-              <NavLink to="/login">Login</NavLink>
+              <Button as={Link} to="/join" variant="text" color="neutral">
+                Sign up
+              </Button>
+              <Button as={Link} to="/login" variant="text" color="neutral">
+                Login
+              </Button>
             </>
           )}
         </div>
       </div>
     </nav>
-  );
-};
-
-export const NavLink = ({
-  to,
-  children,
-}: {
-  to: string;
-  children: React.ReactNode;
-}) => {
-  return (
-    <Link
-      to={to}
-      className="'text-gray-700 hover:underline' rounded-md px-3 py-2 text-sm font-medium hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-100"
-    >
-      {children}
-    </Link>
   );
 };

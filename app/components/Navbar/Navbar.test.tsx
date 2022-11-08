@@ -1,5 +1,5 @@
 import { render, screen } from "test/helpers/render";
-import { Navbar, NavLink } from "./Navbar";
+import { Navbar } from "./Navbar";
 
 describe("Navbar", () => {
   test("renders Navbar", () => {
@@ -19,19 +19,6 @@ describe("Navbar", () => {
 
   test("renders Navbar snapshot", () => {
     const { container } = render(<Navbar />);
-    expect(container).toMatchSnapshot();
-  });
-});
-
-describe("NavLink", () => {
-  test("renders NavLink", () => {
-    render(<NavLink to="/sets">Sets</NavLink>);
-    const link = screen.getByRole("link", { name: /sets/i });
-    expect(link).toBeInTheDocument();
-  });
-
-  test("renders NavLink snapshot", () => {
-    const { container } = render(<NavLink to="/sets">Sets</NavLink>);
     expect(container).toMatchSnapshot();
   });
 });

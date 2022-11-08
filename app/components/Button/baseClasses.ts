@@ -1,5 +1,5 @@
 export const baseClasses = {
-  base: "inline-flex px-4 py-2 rounded justify-center items-center",
+  base: "inline-flex px-4 py-2 rounded justify-center items-center font-medium",
   disabled: "opacity-50 cursor-not-allowed pointer-events-none",
   full: "w-full",
   variant: {
@@ -31,10 +31,10 @@ export const baseClasses = {
         "text-gray-500 hover:bg-gray-500 border-transparent hover:bg-opacity-5",
     },
     text: {
-      primary: "text-blue-500",
-      secondary: "text-emerald-500",
-      danger: "text-red-500",
-      neutral: "text-gray-500",
+      primary: "text-blue-500 hover:underline",
+      secondary: "text-emerald-500 hover:underline",
+      danger: "text-red-500 hover:underline",
+      neutral: "text-gray-700 hover:underline",
     },
   },
 };
