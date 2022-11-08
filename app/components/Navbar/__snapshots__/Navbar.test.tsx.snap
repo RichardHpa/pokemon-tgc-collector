@@ -1,16 +1,5 @@
 // Vitest Snapshot v1
 
-exports[`NavLink > renders NavLink snapshot 1`] = `
-<div>
-  <a
-    class="'text-gray-700 hover:underline' rounded-md px-3 py-2 text-sm font-medium hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-100"
-    href="/sets"
-  >
-    Sets
-  </a>
-</div>
-`;
-
 exports[`Navbar > renders Navbar snapshot 1`] = `
 <div>
   <nav
@@ -20,10 +9,10 @@ exports[`Navbar > renders Navbar snapshot 1`] = `
       class="container mx-auto flex flex-wrap items-center justify-between border-b py-2"
     >
       <div
-        class="flex"
+        class="flex items-center space-x-2"
       >
         <a
-          class="mr-8 flex p-0 text-2xl tracking-tighter text-gray-700 no-underline dark:text-white"
+          class="flex p-0 text-2xl tracking-tighter text-gray-700 no-underline dark:text-white"
           href="/"
         >
           <span
@@ -33,10 +22,26 @@ exports[`Navbar > renders Navbar snapshot 1`] = `
           </span>
         </a>
         <a
-          class="'text-gray-700 hover:underline' rounded-md px-3 py-2 text-sm font-medium hover:text-gray-900 dark:text-gray-200 dark:hover:text-gray-100"
+          class="inline-flex px-4 py-2 rounded justify-center items-center font-medium text-gray-700 hover:underline"
           href="/sets"
         >
           Sets
+        </a>
+      </div>
+      <div
+        class="flex items-center space-x-2"
+      >
+        <a
+          class="inline-flex px-4 py-2 rounded justify-center items-center font-medium text-gray-700 hover:underline"
+          href="/join"
+        >
+          Sign up
+        </a>
+        <a
+          class="inline-flex px-4 py-2 rounded justify-center items-center font-medium text-gray-700 hover:underline"
+          href="/login"
+        >
+          Login
         </a>
       </div>
     </div>

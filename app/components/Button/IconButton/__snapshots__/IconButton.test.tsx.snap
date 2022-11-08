@@ -2,7 +2,7 @@
 
 exports[`IconButton > renders IconButton 1`] = `
 <button
-  class="inline-flex align-middle justify-center rounded-full p-2 bg-blue-500 text-white hover:bg-blue-600 border-blue-500"
+  class="inline-flex align-middle justify-center rounded-full !p-2 bg-blue-500 text-white hover:bg-blue-600 border-blue-500"
 >
   <svg
     aria-hidden="true"

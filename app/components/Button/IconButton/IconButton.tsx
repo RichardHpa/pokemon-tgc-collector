@@ -1,7 +1,7 @@
-import clsx from "clsx";
 import { cloneElement, useMemo } from "react";
+import clsx from "clsx";
 
-import { baseClasses } from "~/components/Button/baseClasses";
+import { baseClasses } from "../baseClasses";
 
 import type { ButtonProps } from "~/components/Button/types";
 
@@ -10,7 +10,7 @@ interface IconButtonProps extends Omit<ButtonProps, "children" | "full"> {
 }
 
 const iconButtonClasses = {
-  base: "inline-flex align-middle justify-center rounded-full p-2",
+  base: "inline-flex align-middle justify-center rounded-full !p-2",
 };
 
 export const IconButton = ({
@@ -33,6 +33,7 @@ export const IconButton = ({
       className={clsx(
         iconButtonClasses.base,
         baseClasses.variant[variant][color],
+        // baseClasses.variant[variant].common,
         { [baseClasses.disabled]: disabled },
         className
       )}

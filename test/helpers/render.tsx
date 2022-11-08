@@ -9,11 +9,11 @@ const Providers: FC<any> = ({ children }) => (
   <BrowserRouter>{children}</BrowserRouter>
 );
 
-export * from "@testing-library/react";
-
 export const render = (
   ui: ReactElement,
   options?: Omit<RenderOptions, "queries">
 ) => {
   return baseRender(ui, { ...options, wrapper: Providers });
 };
+
+// export * from "@testing-library/react";

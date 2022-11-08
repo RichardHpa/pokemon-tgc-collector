@@ -1,7 +1,17 @@
-import { render, screen } from "test/helpers/render";
+import { render } from "test/helpers/render";
+import { screen } from "@testing-library/react";
 import { Navbar } from "./Navbar";
 
+vi.mock("~/utils", () => {
+  return {
+    useOptionalUser: vi.fn(),
+  };
+});
+
 describe("Navbar", () => {
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
   test("renders Navbar", () => {
     render(<Navbar />);
 
@@ -11,10 +21,16 @@ describe("Navbar", () => {
 
   test("renders all links", () => {
     render(<Navbar />);
-    expect(screen.getAllByRole("link")).toHaveLength(2);
+    expect(screen.getAllByRole("link")).toHaveLength(4);
 
     const setsLink = screen.getByRole("link", { name: /sets/i });
     expect(setsLink).toBeInTheDocument();
+
+    const loginLink = screen.getByRole("link", { name: /login/i });
+    expect(loginLink).toBeInTheDocument();
+
+    const registerLink = screen.getByRole("link", { name: /sign up/i });
+    expect(registerLink).toBeInTheDocument();
   });
 
   test("renders Navbar snapshot", () => {

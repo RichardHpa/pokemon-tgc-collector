@@ -12,13 +12,13 @@ export const baseClasses = {
     },
     outline: {
       primary:
-        "text-blue-500 hover:bg-blue-50 border-blue-500 border py-[calc(0.5rem-1px)]",
+        "text-blue-500 hover:bg-blue-50 border-blue-500 border py-[calc(0.5rem-1px)] px-[calc(1rem-1px)]",
       secondary:
-        "text-emerald-500 hover:bg-emerald-50 border-emerald-500 border py-[calc(0.5rem-1px)]",
+        "text-emerald-500 hover:bg-emerald-50 border-emerald-500 border py-[calc(0.5rem-1px)] px-[calc(1rem-1px)]",
       danger:
-        "text-red-500 hover:bg-red-50 border-red-500 border py-[calc(0.5rem-1px)]",
+        "text-red-500 hover:bg-red-50 border-red-500 border py-[calc(0.5rem-1px)] px-[calc(1rem-1px)]",
       neutral:
-        "text-gray-500 hover:bg-gray-50 border-gray-500 border py-[calc(0.5rem-1px)]",
+        "text-gray-500 hover:bg-gray-50 border-gray-500 border py-[calc(0.5rem-1px)] px-[calc(1rem-1px)]",
     },
     ghost: {
       primary:

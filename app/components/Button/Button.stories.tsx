@@ -1,6 +1,7 @@
 import { Button } from "./Button";
 
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
+import type { variant } from "~/types/variants";
 
 const Template: ComponentStory<typeof Button> = ({ variant, ...args }) => {
   return (
@@ -43,6 +44,35 @@ export const Text = Template.bind({});
 Text.args = {
   variant: "text",
 };
+
+const variants: variant[] = ["solid", "outline", "ghost", "text"];
+const OverviewComponent: ComponentStory<typeof Button> = ({
+  variant,
+  ...args
+}) => {
+  return (
+    <>
+      {variants.map((variant) => (
+        <div key={variant} className="mt-2 flex space-x-2">
+          <Button {...args} color="primary" variant={variant}>
+            Primary
+          </Button>
+          <Button {...args} color="secondary" variant={variant}>
+            Secondary
+          </Button>
+          <Button {...args} color="danger" variant={variant}>
+            Danger
+          </Button>
+          <Button {...args} color="neutral" variant={variant}>
+            Neutral
+          </Button>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export const Snapshots = OverviewComponent.bind({});
 
 export default {
   title: "Components/Button",
