@@ -35,8 +35,8 @@ export const ButtonBase = React.forwardRef<HTMLButtonElement, ButtonProps>(
         onClick={onClick}
         className={clsx(
           baseClasses.base,
+          baseClasses.variant[variant].common,
           baseClasses.variant[variant][color],
-          // baseClasses.variant[variant].common,
           { [baseClasses.disabled]: disabled },
           { [baseClasses.full]: full },
           className

@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
-import type { variant } from "~/types/variants";
+import type { Variant } from "~/types/variants";
 
 const Template: ComponentStory<typeof Button> = ({ variant, ...args }) => {
   return (
@@ -45,7 +45,7 @@ Text.args = {
   variant: "text",
 };
 
-const variants: variant[] = ["solid", "outline", "ghost", "text"];
+const variants: Variant[] = ["solid", "outline", "ghost", "text"];
 const OverviewComponent: ComponentStory<typeof Button> = ({
   variant,
   ...args

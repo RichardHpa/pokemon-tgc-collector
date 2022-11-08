@@ -3,7 +3,7 @@ import { IconButton } from "./IconButton";
 import { SunIcon } from "@heroicons/react/24/solid";
 
 import type { ComponentStory, ComponentMeta } from "@storybook/react";
-import type { variant } from "~/types/variants";
+import type { Variant } from "~/types/variants";
 
 const Template: ComponentStory<typeof IconButton> = ({ variant, ...args }) => {
   return (
@@ -31,7 +31,7 @@ Ghost.args = {
   variant: "ghost",
 };
 
-const variants: variant[] = ["solid", "outline", "ghost", "text"];
+const variants: Variant[] = ["solid", "outline", "ghost", "text"];
 const OverviewComponent: ComponentStory<typeof IconButton> = ({
   variant,
   ...args
