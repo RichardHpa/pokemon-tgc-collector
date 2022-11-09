@@ -1,0 +1,50 @@
+// Vitest Snapshot v1
+
+exports[`Navbar > renders Navbar snapshot 1`] = `
+<div>
+  <nav
+    class="border-gray-200 px-2 py-2.5 sm:px-4"
+  >
+    <div
+      class="container mx-auto flex flex-wrap items-center justify-between border-b py-2"
+    >
+      <div
+        class="flex items-center space-x-2"
+      >
+        <a
+          class="flex p-0 text-2xl tracking-tighter text-gray-700 no-underline dark:text-white"
+          href="/"
+        >
+          <span
+            class="inline-block font-medium"
+          >
+            Pokemon Card Checker
+          </span>
+        </a>
+        <a
+          class="inline-flex px-4 py-2 rounded justify-center items-center font-medium hover:underline text-gray-700"
+          href="/sets"
+        >
+          Sets
+        </a>
+      </div>
+      <div
+        class="flex items-center space-x-2"
+      >
+        <a
+          class="inline-flex px-4 py-2 rounded justify-center items-center font-medium hover:underline text-gray-700"
+          href="/join"
+        >
+          Sign up
+        </a>
+        <a
+          class="inline-flex px-4 py-2 rounded justify-center items-center font-medium hover:underline text-gray-700"
+          href="/login"
+        >
+          Login
+        </a>
+      </div>
+    </div>
+  </nav>
+</div>
+`;

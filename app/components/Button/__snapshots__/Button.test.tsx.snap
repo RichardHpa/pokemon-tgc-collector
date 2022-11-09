@@ -3,7 +3,7 @@
 exports[`Button > renders Button snapshot 1`] = `
 <div>
   <button
-    class="inline-flex px-4 py-2 rounded justify-center items-center bg-blue-500 text-white hover:bg-blue-600 border-blue-500"
+    class="inline-flex px-4 py-2 rounded justify-center items-center font-medium text-white bg-blue-500 hover:bg-blue-600 border-blue-500"
   />
 </div>
 `;

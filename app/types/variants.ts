@@ -1,1 +1,1 @@
-export type variant = "solid" | "outline" | "ghost" | "text";
+export type Variant = "solid" | "outline" | "ghost" | "text";

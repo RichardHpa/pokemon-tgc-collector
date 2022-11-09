@@ -1,7 +1,8 @@
-import clsx from "clsx";
 import { cloneElement, useMemo } from "react";
+import clsx from "clsx";
+import { merge } from "lodash";
 
-import { baseClasses } from "~/components/Button/baseClasses";
+import { baseClasses } from "../baseClasses";
 
 import type { ButtonProps } from "~/components/Button/types";
 
@@ -11,7 +12,14 @@ interface IconButtonProps extends Omit<ButtonProps, "children" | "full"> {
 
 const iconButtonClasses = {
   base: "inline-flex align-middle justify-center rounded-full p-2",
+  variant: {
+    outline: {
+      common: "border !p-[calc(0.5rem-1px)]",
+    },
+  },
 };
+// the first argument is the destination object, so we need it to be an empty object so that we don't mutate the original object
+const mergedClasses = merge({}, baseClasses, iconButtonClasses);
 
 export const IconButton = ({
   icon,
@@ -32,8 +40,9 @@ export const IconButton = ({
     <button
       className={clsx(
         iconButtonClasses.base,
-        baseClasses.variant[variant][color],
-        { [baseClasses.disabled]: disabled },
+        mergedClasses.variant[variant][color],
+        mergedClasses.variant[variant].common,
+        { [mergedClasses.disabled]: disabled },
         className
       )}
       {...props}

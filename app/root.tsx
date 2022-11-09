@@ -9,6 +9,8 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import { Navbar } from "~/components/Navbar";
+
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { getUser } from "./session.server";
 
@@ -36,6 +38,7 @@ export default function App() {
         <Links />
       </head>
       <body className="h-full">
+        <Navbar />
         <Outlet />
         <ScrollRestoration />
         <Scripts />
