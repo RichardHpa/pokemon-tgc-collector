@@ -12,3 +12,6 @@ node_modules
 /app/styles/tailwind.css
 
 /storybook-static
+
+# Avoid committing files from pre-commit hooks and tsc-files
+tsconfig.*.json
