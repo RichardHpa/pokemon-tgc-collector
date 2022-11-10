@@ -40,6 +40,7 @@ export default function App() {
       <body className="h-full">
         <Navbar />
         <Outlet />
+        a
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
