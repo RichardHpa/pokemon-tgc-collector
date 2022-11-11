@@ -19,6 +19,11 @@ export const Navbar = () => {
             </span>
           </Link>
 
+          {/* We are just keeping this in here until we edit the cypress tests */}
+          <Button as={Link} to="/notes" variant="text" color="neutral">
+            notes
+          </Button>
+
           <Button as={Link} to="/sets" variant="text" color="neutral">
             Sets
           </Button>
@@ -39,7 +44,7 @@ export const Navbar = () => {
                 Sign up
               </Button>
               <Button as={Link} to="/login" variant="text" color="neutral">
-                Login
+                Log In
               </Button>
             </>
           )}

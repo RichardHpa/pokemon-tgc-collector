@@ -25,7 +25,8 @@
     "validate": "run-p \"test -- --run\" lint typecheck test:e2e:run",
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "pre": "./other/validate"
   },
   "prettier": {},
   "eslintIgnore": [
@@ -82,7 +83,7 @@
     "c8": "^7.12.0",
     "cookie": "^0.5.0",
     "cross-env": "^7.0.3",
-    "cypress": "^10.8.0",
+    "cypress": "^10.11.0",
     "eslint": "^8.27.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-cypress": "^2.12.1",

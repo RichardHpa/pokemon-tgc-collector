@@ -1,0 +1,10 @@
+#!/bin/sh
+
+npx concurrently \
+  --kill-others-on-fail \
+  --prefix "[{name}]" \
+  --names "test,lint,typecheck,build" \
+    "npm run test --silent -- --watch=false" \
+    "npm run lint --silent" \
+    "npm run typecheck --silent" \
+    "npm run build --silent"
