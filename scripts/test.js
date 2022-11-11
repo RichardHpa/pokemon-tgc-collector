@@ -33,6 +33,6 @@ if (result.status === 0) {
   console.log(color("success", "✅  Pre commit complete"));
 } else {
   console.clear();
-  console.log(result);
+  console.log(result.stdout);
   // process.exit(resuxlt.status);
 }
