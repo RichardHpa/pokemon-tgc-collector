@@ -1,4 +1,0 @@
-{
-  "**/*.{ts,tsx,js,jsx}": "npx eslint --fix",
-  "cypress/**/*.{ts,tsx}": "npx tsc-files --noEmit"
-}
