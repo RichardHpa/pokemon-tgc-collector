@@ -5,7 +5,7 @@ import { useOptionalUser } from "~/utils";
 
 export const Navbar = () => {
   const user = useOptionalUser();
-  console.log(user);
+
   return (
     <nav className="border-gray-200 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between border-b py-2">
