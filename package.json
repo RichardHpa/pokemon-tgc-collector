@@ -26,7 +26,7 @@
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pre:check": "node ./scripts/test"
+    "pre:check": "node ./scripts/validate"
   },
   "prettier": {},
   "eslintIgnore": [
@@ -91,7 +91,6 @@
     "eslint-plugin-storybook": "^0.6.7",
     "happy-dom": "^7.6.7",
     "husky": "^8.0.2",
-    "lint-staged": "^13.0.3",
     "msw": "^0.47.3",
     "npm-run-all": "^4.1.5",
     "postcss": "^8.4.19",
