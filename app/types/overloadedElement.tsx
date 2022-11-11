@@ -1,9 +1,5 @@
 /* eslint-disable no-unused-vars */
-import type {
-  ElementType,
-  ComponentPropsWithRef,
-  ForwardRefExoticComponent,
-} from "react";
+import type { ElementType, ComponentPropsWithRef } from "react";
 /**
  * Remove properties `K` from `T`.
  * Distributive for union types.

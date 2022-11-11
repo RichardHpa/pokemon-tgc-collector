@@ -21,12 +21,12 @@ describe("Navbar", () => {
 
   test("renders all links", () => {
     render(<Navbar />);
-    expect(screen.getAllByRole("link")).toHaveLength(4);
+    expect(screen.getAllByRole("link")).toHaveLength(5);
 
     const setsLink = screen.getByRole("link", { name: /sets/i });
     expect(setsLink).toBeInTheDocument();
 
-    const loginLink = screen.getByRole("link", { name: /login/i });
+    const loginLink = screen.getByRole("link", { name: /log in/i });
     expect(loginLink).toBeInTheDocument();
 
     const registerLink = screen.getByRole("link", { name: /sign up/i });

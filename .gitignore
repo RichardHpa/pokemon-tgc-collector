@@ -15,3 +15,5 @@ node_modules
 
 # Avoid committing files from pre-commit hooks and tsc-files
 tsconfig.*.json
+# Avoid committing built files
+pokemon-tgc-collector-*.tgz

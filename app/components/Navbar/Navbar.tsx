@@ -5,7 +5,7 @@ import { useOptionalUser } from "~/utils";
 
 export const Navbar = () => {
   const user = useOptionalUser();
-  console.log(user);
+
   return (
     <nav className="border-gray-200 px-2 py-2.5 sm:px-4">
       <div className="container mx-auto flex flex-wrap items-center justify-between border-b py-2">
@@ -18,6 +18,11 @@ export const Navbar = () => {
               Pokemon Card Checker
             </span>
           </Link>
+
+          {/* We are just keeping this in here until we edit the cypress tests */}
+          <Button as={Link} to="/notes" variant="text" color="neutral">
+            notes
+          </Button>
 
           <Button as={Link} to="/sets" variant="text" color="neutral">
             Sets
@@ -39,7 +44,7 @@ export const Navbar = () => {
                 Sign up
               </Button>
               <Button as={Link} to="/login" variant="text" color="neutral">
-                Login
+                Log In
               </Button>
             </>
           )}
