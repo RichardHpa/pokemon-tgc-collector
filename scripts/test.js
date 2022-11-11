@@ -1,9 +1,6 @@
-var spawnSync = require("child_process").spawnSync;
+const spawnSync = require("child_process").spawnSync;
 
-var styles = {
-  // got these from playing around with what I found from:
-  // https://github.com/istanbuljs/istanbuljs/blob/0f328fd0896417ccb2085f4b7888dd8e167ba3fa/packages/istanbul-lib-report/lib/file-writer.js#L84-L96
-  // they're the best I could find that works well for light or dark terminals
+const styles = {
   success: { open: "\u001b[32;1m", close: "\u001b[0m" },
   danger: { open: "\u001b[31;1m", close: "\u001b[0m" },
   info: { open: "\u001b[36;1m", close: "\u001b[0m" },
@@ -15,7 +12,7 @@ function color(modifier, string) {
 }
 console.log(color("info", "▶️  Starting pre commit..."));
 
-var error = spawnSync("npx --version", { shell: true })
+const error = spawnSync("npx --version", { shell: true })
   .stderr.toString()
   .trim();
 if (error) {
@@ -28,12 +25,12 @@ if (error) {
   throw error;
 }
 
-var command = `npx concurrently --kill-others-on-fail --prefix "[{name}]" --names "test,lint,typecheck,build"   --prefix-colors "bgRed.bold.white,bgGreen.bold.white,bgBlue.bold.white,bgMagenta.bold.white" "npm run test --silent -- --watch=false" "npm run lint --silent" "npm run typecheck --silent" "npm run build --silent"`;
+const command = `npx concurrently --kill-others-on-fail --prefix "[{name}]" --names "test,lint,typecheck,build"   --prefix-colors "bgRed.bold.white,bgGreen.bold.white,bgBlue.bold.white,bgMagenta.bold.white" "npm run test --silent -- --watch=false" "npm run lint --silent" "npm run typecheck --silent" "npm run build --silent"`;
 console.log(color("subtitle", "      Running commands"));
 
-var result = spawnSync(command, { stdio: "inherit", shell: true });
+const result = spawnSync(command, { stdio: "inherit", shell: true });
 if (result.status === 0) {
-  console.log(color("success", "✅  Workshop setup complete..."));
+  console.log(color("success", "✅  Pre commit complete"));
 } else {
-  process.exit(result.status);
+  // process.exit(resuxlt.status);
 }

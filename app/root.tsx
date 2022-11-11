@@ -10,7 +10,7 @@ import {
 } from "@remix-run/react";
 
 import { Navbar } from "~/components/Navbar";
-
+import { Button } from "~/components/Button";
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { getUser } from "./session.server";
 

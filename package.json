@@ -26,8 +26,7 @@
     "prepare": "husky install",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "pre": "./other/validate",
-    "script": "node ./scripts/test"
+    "pre:check": "node ./scripts/test"
   },
   "prettier": {},
   "eslintIgnore": [
