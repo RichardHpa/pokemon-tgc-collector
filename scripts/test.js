@@ -32,5 +32,7 @@ const result = spawnSync(command, { stdio: "inherit", shell: true });
 if (result.status === 0) {
   console.log(color("success", "✅  Pre commit complete"));
 } else {
+  console.clear();
+  console.log(result);
   // process.exit(resuxlt.status);
 }
