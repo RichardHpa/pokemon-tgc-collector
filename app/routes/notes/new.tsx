@@ -6,7 +6,7 @@ import * as React from "react";
 import { Button } from "~/components/Button";
 
 import { createNote } from "~/models/note.server";
-import { requireUserId } from "~/session.server";
+import { requireUserId } from "~/utils/session.server";
 
 export async function action({ request }: ActionArgs) {
   const userId = await requireUserId(request);

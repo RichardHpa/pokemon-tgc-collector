@@ -6,7 +6,7 @@ import * as React from "react";
 import { Link } from "~/components/Link";
 import { Button } from "~/components/Button";
 import { InputField } from "~/components/Inputs";
-import { getUserId, createUserSession } from "~/session.server";
+import { getUserId, createUserSession } from "~/utils/session.server";
 
 import { createUser, getUserByEmail } from "~/models/user.server";
 import { safeRedirect, validateEmail } from "~/utils";
