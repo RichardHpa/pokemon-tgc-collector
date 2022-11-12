@@ -4,7 +4,7 @@ import { NavLink, Outlet, useLoaderData } from "@remix-run/react";
 
 import { Link } from "~/components/Link";
 
-import { requireUserId } from "~/session.server";
+import { requireUserId } from "~/utils/session.server";
 
 import { getNoteListItems } from "~/models/note.server";
 

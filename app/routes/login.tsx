@@ -7,7 +7,7 @@ import { Link } from "~/components/Link";
 import { Button } from "~/components/Button";
 import { InputField, Checkbox } from "~/components/Inputs";
 
-import { createUserSession, getUserId } from "~/session.server";
+import { createUserSession, getUserId } from "~/utils/session.server";
 import { verifyLogin } from "~/models/user.server";
 import { safeRedirect, validateEmail } from "~/utils";
 
