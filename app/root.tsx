@@ -12,7 +12,11 @@ import {
 import tailwindStylesheetUrl from "./styles/tailwind.css";
 
 import { getUser } from "~/utils/session.server";
-import { ThemeProvider, useTheme } from "~/utils/theme-provider";
+import {
+  NonFlashOfWrongThemeEls,
+  ThemeProvider,
+  useTheme,
+} from "~/utils/theme-provider";
 
 import { Navbar } from "~/components/Navbar";
 
@@ -36,10 +40,11 @@ export async function loader({ request }: LoaderArgs) {
 function App() {
   const [theme] = useTheme();
   return (
-    <html lang="en" className={clsx(theme, "h-full")}>
+    <html lang="en" className={clsx(theme)}>
       <head>
         <Meta />
         <Links />
+        <NonFlashOfWrongThemeEls />
       </head>
       <body className="flex min-h-screen flex-col bg-white text-black dark:bg-gray-900 dark:text-gray-200">
         <Navbar />
