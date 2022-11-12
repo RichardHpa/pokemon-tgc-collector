@@ -8,7 +8,7 @@ vi.mock("~/utils", () => {
   };
 });
 
-describe("Navbar", () => {
+describe.skip("Navbar", () => {
   afterEach(() => {
     vi.clearAllMocks();
   });

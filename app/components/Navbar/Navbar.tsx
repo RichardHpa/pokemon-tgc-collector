@@ -1,5 +1,6 @@
 import { Link, Form } from "@remix-run/react";
 import { Button } from "~/components/Button";
+import { ThemeToggle } from "~/components/ThemeToggle";
 
 import { useOptionalUser } from "~/utils";
 
@@ -48,6 +49,7 @@ export const Navbar = () => {
               </Button>
             </>
           )}
+          <ThemeToggle />
         </div>
       </div>
     </nav>
