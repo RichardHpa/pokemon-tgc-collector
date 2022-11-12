@@ -1,4 +1,4 @@
-import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
+import clsx from "clsx";
 import { json } from "@remix-run/node";
 import {
   Links,
@@ -9,11 +9,14 @@ import {
   ScrollRestoration,
 } from "@remix-run/react";
 
+import tailwindStylesheetUrl from "./styles/tailwind.css";
+
+import { getUser } from "~/utils/session.server";
+import { ThemeProvider, useTheme } from "~/utils/theme-provider";
+
 import { Navbar } from "~/components/Navbar";
 
-import tailwindStylesheetUrl from "./styles/tailwind.css";
-import { getUser } from "~/utils/session.server";
-
+import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
 };
@@ -30,14 +33,15 @@ export async function loader({ request }: LoaderArgs) {
   });
 }
 
-export default function App() {
+function App() {
+  const [theme] = useTheme();
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className={clsx(theme, "h-full")}>
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="h-full">
+      <body className="flex min-h-screen flex-col bg-white text-black dark:bg-gray-900 dark:text-gray-200">
         <Navbar />
         <Outlet />
         <ScrollRestoration />
@@ -45,5 +49,13 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function AppWithProviders() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   );
 }
