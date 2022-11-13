@@ -100,6 +100,8 @@
     "prisma": "^4.6.1",
     "semver": "^7.3.8",
     "start-server-and-test": "^1.14.0",
+    "storybook-addon-themes": "^6.1.0",
+    "storybook-tailwind-dark-mode": "^1.0.15",
     "tailwindcss": "^3.2.4",
     "ts-node": "^10.9.1",
     "tsc-files": "^1.1.3",

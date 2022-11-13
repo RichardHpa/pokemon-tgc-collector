@@ -8,18 +8,18 @@ vi.mock("~/utils", () => {
   };
 });
 
-describe.skip("Navbar", () => {
+describe("Navbar", () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
-  test("renders Navbar", () => {
+  test.todo("renders Navbar", () => {
     render(<Navbar />);
 
     const link = screen.getByRole("link", { name: /Pokemon Card Checker/i });
     expect(link).toBeInTheDocument();
   });
 
-  test("renders all links", () => {
+  test.todo("renders all links", () => {
     render(<Navbar />);
     expect(screen.getAllByRole("link")).toHaveLength(5);
 
@@ -33,7 +33,7 @@ describe.skip("Navbar", () => {
     expect(registerLink).toBeInTheDocument();
   });
 
-  test("renders Navbar snapshot", () => {
+  test.todo("renders Navbar snapshot", () => {
     const { container } = render(<Navbar />);
     expect(container).toMatchSnapshot();
   });

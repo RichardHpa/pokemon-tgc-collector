@@ -14,7 +14,7 @@ import tailwindStylesheetUrl from "./styles/tailwind.css";
 import { getUser } from "~/utils/session.server";
 import { getThemeSession } from "./utils/theme.server";
 import {
-  NonFlashOfWrongThemeEls,
+  // NonFlashOfWrongThemeEls,
   ThemeProvider,
   useTheme,
 } from "~/utils/theme-provider";
@@ -59,16 +59,17 @@ export const loader: LoaderFunction = async ({ request }: LoaderArgs) => {
 
 function App() {
   const [theme] = useTheme();
-  const data = useLoaderData<LoaderData>();
+  // const data = useLoaderData<LoaderData>();
 
   return (
-    <html lang="en" className={clsx(theme)}>
+    <html lang="en" className={clsx("h-full", theme)}>
       <head>
         <Meta />
         <Links />
-        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
+        {/* For some reason this is causing some issues with elements like inputs */}
+        {/* <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} /> */}
       </head>
-      <body className="flex min-h-screen flex-col bg-white text-black dark:bg-gray-900 dark:text-gray-200">
+      <body className="flex h-full flex-col bg-white text-black dark:bg-gray-900 dark:text-gray-200">
         <Navbar />
         <Outlet />
         <ScrollRestoration />
