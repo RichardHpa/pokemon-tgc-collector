@@ -4,7 +4,7 @@ exports[`InputField > renders InputField snapshot 1`] = `
 <div>
   <div>
     <label
-      class="block text-sm font-medium text-gray-700 dark:text-gray-300"
+      class="block text-sm font-medium text-black dark:text-gray-200"
       for="text-field"
     >
       text field
@@ -16,7 +16,7 @@ exports[`InputField > renders InputField snapshot 1`] = `
       <input
         aria-describedby="text-field-error"
         autocomplete="off"
-        class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-blue-50 dark:focus:ring-blue-500"
+        class="block w-full rounded-lg border border-gray-300 p-2.5 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500 dark:border-gray-600  dark:text-black dark:placeholder-gray-400 dark:focus:border-blue-50 dark:focus:ring-blue-500"
         id="text-field"
         name="text-field"
         type="text"
