@@ -8,13 +8,13 @@ exports[`Checkbox > renders Checkbox snapshot 1`] = `
     >
       <input
         aria-describedby="checkbox-error"
-        class="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500"
+        class="h-4 w-4 rounded border-gray-300 bg-gray-100 text-blue-600 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:ring-offset-gray-800 dark:focus:ring-blue-600"
         id="checkbox"
         name="checkbox"
         type="checkbox"
       />
       <label
-        class="ml-2 block cursor-pointer text-sm text-gray-900"
+        class="ml-2 block cursor-pointer text-sm text-black dark:text-gray-200"
         for="checkbox"
       >
         checkbox

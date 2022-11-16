@@ -1,5 +1,4 @@
-import type { LinksFunction, LoaderArgs, MetaFunction } from "@remix-run/node";
-import { json } from "@remix-run/node";
+import clsx from "clsx";
 import {
   Links,
   LiveReload,
@@ -7,12 +6,29 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
+
+import tailwindStylesheetUrl from "./styles/tailwind.css";
+
+import { getUser } from "~/utils/session.server";
+import { getThemeSession } from "./utils/theme.server";
+import {
+  NonFlashOfWrongThemeEls,
+  ThemeProvider,
+  useTheme,
+} from "~/utils/theme-provider";
 
 import { Navbar } from "~/components/Navbar";
 
-import tailwindStylesheetUrl from "./styles/tailwind.css";
-import { getUser } from "~/utils/session.server";
+import type {
+  LinksFunction,
+  LoaderArgs,
+  MetaFunction,
+  LoaderFunction,
+} from "@remix-run/node";
+import type { Theme } from "~/utils/theme-provider";
+import type { User } from "~/models/user.server";
 
 export const links: LinksFunction = () => {
   return [{ rel: "stylesheet", href: tailwindStylesheetUrl }];
@@ -24,20 +40,35 @@ export const meta: MetaFunction = () => ({
   viewport: "width=device-width,initial-scale=1",
 });
 
-export async function loader({ request }: LoaderArgs) {
-  return json({
-    user: await getUser(request),
-  });
-}
+export type LoaderData = {
+  theme: Theme | null;
+  user: User | null;
+};
 
-export default function App() {
+export const loader: LoaderFunction = async ({ request }: LoaderArgs) => {
+  const themeSession = await getThemeSession(request);
+  const user = await getUser(request);
+
+  const data: LoaderData = {
+    theme: themeSession.getTheme(),
+    user,
+  };
+
+  return data;
+};
+
+function App() {
+  const [theme] = useTheme();
+  const data = useLoaderData<LoaderData>();
+
   return (
-    <html lang="en" className="h-full">
+    <html lang="en" className={clsx("h-full", theme)}>
       <head>
         <Meta />
         <Links />
+        <NonFlashOfWrongThemeEls ssrTheme={Boolean(data.theme)} />
       </head>
-      <body className="h-full">
+      <body className="flex h-full flex-col bg-white text-black dark:bg-gray-900 dark:text-gray-200">
         <Navbar />
         <Outlet />
         <ScrollRestoration />
@@ -45,5 +76,15 @@ export default function App() {
         <LiveReload />
       </body>
     </html>
+  );
+}
+
+export default function AppWithProviders() {
+  const data = useLoaderData<LoaderData>();
+
+  return (
+    <ThemeProvider specifiedTheme={data.theme}>
+      <App />
+    </ThemeProvider>
   );
 }

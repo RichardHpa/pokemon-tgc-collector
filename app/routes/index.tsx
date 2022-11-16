@@ -1,7 +1,3 @@
 export default function Index() {
-  return (
-    <main className="relative min-h-screen bg-white sm:flex sm:items-center sm:justify-center">
-      Home Page
-    </main>
-  );
+  return <main className="flex flex-col items-center py-5">Home Page</main>;
 }

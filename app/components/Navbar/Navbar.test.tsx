@@ -1,6 +1,7 @@
 import { render } from "test/helpers/render";
 import { screen } from "@testing-library/react";
 import { Navbar } from "./Navbar";
+import { Theme, ThemeProvider } from "~/utils/theme-provider";
 
 vi.mock("~/utils", () => {
   return {
@@ -8,19 +9,38 @@ vi.mock("~/utils", () => {
   };
 });
 
+vi.mock("@remix-run/react", async () => {
+  let remix = await vi.importActual("@remix-run/react");
+  return {
+    // @ts-expect-error
+    ...remix,
+    // get useFetcher to return an idle state initially
+    useFetcher: vi.fn().mockReturnValue({ state: "idle" }),
+  };
+});
+
 describe("Navbar", () => {
   afterEach(() => {
     vi.clearAllMocks();
   });
+
   test("renders Navbar", () => {
-    render(<Navbar />);
+    render(
+      <ThemeProvider specifiedTheme={Theme.DARK}>
+        <Navbar />
+      </ThemeProvider>
+    );
 
     const link = screen.getByRole("link", { name: /Pokemon Card Checker/i });
     expect(link).toBeInTheDocument();
   });
 
   test("renders all links", () => {
-    render(<Navbar />);
+    render(
+      <ThemeProvider specifiedTheme={Theme.DARK}>
+        <Navbar />
+      </ThemeProvider>
+    );
     expect(screen.getAllByRole("link")).toHaveLength(5);
 
     const setsLink = screen.getByRole("link", { name: /sets/i });
@@ -34,7 +54,11 @@ describe("Navbar", () => {
   });
 
   test("renders Navbar snapshot", () => {
-    const { container } = render(<Navbar />);
+    const { container } = render(
+      <ThemeProvider specifiedTheme={Theme.DARK}>
+        <Navbar />
+      </ThemeProvider>
+    );
     expect(container).toMatchSnapshot();
   });
 });
