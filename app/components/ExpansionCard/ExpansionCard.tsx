@@ -12,7 +12,7 @@ export const ExpansionCard = ({
     <Card>
       <div className="flex h-full flex-col">
         <div className="mb-4 flex justify-center">
-          <img className="w-full max-w-xs" src={image} alt={`${name} logo`} />
+          <img className="max-h-28 w-auto" src={image} alt={`${name} logo`} />
         </div>
 
         <div className="mt-auto">

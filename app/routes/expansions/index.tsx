@@ -23,7 +23,6 @@ export const loader: LoaderFunction = async ({ request }) => {
   const data = await getExpansions({
     page,
     pageSize: 12,
-    orderBy: "releaseDate",
   });
 
   return json<LoaderData>({
@@ -92,8 +91,9 @@ export default function ExpansionsIndexPage() {
     }
 
     if (fetcher.data && fetcher.data.expansions.length > 0) {
-      setExpansions((prevPhotos: Set[]) => [
-        ...prevPhotos,
+      console.log(fetcher.data.expansions);
+      setExpansions((prevSets: Set[]) => [
+        ...prevSets,
         ...fetcher.data.expansions,
       ]);
       setPage((page: number) => page + 1);
