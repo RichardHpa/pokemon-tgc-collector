@@ -13,7 +13,7 @@ exports[`ExpansionCard > renders SetCard snapshot 1`] = `
       >
         <img
           alt="Lost Origin logo"
-          class="w-full max-w-xs"
+          class="max-h-28 w-auto"
           src="https://images.pokemontcg.io/swsh11/logo.png"
         />
       </div>
