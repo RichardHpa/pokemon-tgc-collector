@@ -25,8 +25,8 @@ export const Navbar = () => {
             notes
           </Button>
 
-          <Button as={Link} to="/sets" variant="text" color="neutral">
-            Sets
+          <Button as={Link} to="/expansions" variant="text" color="neutral">
+            Expansions
           </Button>
         </div>
         <div className="flex items-center space-x-2">

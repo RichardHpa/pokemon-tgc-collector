@@ -13,19 +13,17 @@ type LoaderData = {
 
 export const loader: LoaderFunction = async () => {
   return json<LoaderData>({
-    data: await getExpansions({ orderBy: "-releaseDate" }),
+    data: await getExpansions({ orderBy: "releaseDate", pageSize: 12 }),
   });
 };
 
-export default function Index() {
+export default function ExpansionsIndexPage() {
   const data = useLoaderData<LoaderData>();
+
   return (
-    <main className="">
-      <h1 className="mb-4 text-center text-3xl font-bold text-gray-800 dark:text-white">
-        Latest Pokemon TCG Sets
-      </h1>
+    <div>
       {data?.data && (
-        <div className="grid grid-cols-3 gap-3" role="list">
+        <div className="grid grid-cols-4 gap-3" role="list">
           {data?.data.map((set) => {
             return (
               <div
@@ -44,6 +42,6 @@ export default function Index() {
           })}
         </div>
       )}
-    </main>
+    </div>
   );
 }

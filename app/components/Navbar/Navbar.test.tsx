@@ -43,8 +43,8 @@ describe("Navbar", () => {
     );
     expect(screen.getAllByRole("link")).toHaveLength(5);
 
-    const setsLink = screen.getByRole("link", { name: /sets/i });
-    expect(setsLink).toBeInTheDocument();
+    const expansionsLink = screen.getByRole("link", { name: /expansions/i });
+    expect(expansionsLink).toBeInTheDocument();
 
     const loginLink = screen.getByRole("link", { name: /log in/i });
     expect(loginLink).toBeInTheDocument();
