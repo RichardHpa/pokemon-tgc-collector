@@ -1,4 +1,4 @@
-import { useLoaderData } from "@remix-run/react";
+import { useLoaderData, Link } from "@remix-run/react";
 import { json } from "@remix-run/node";
 
 import { getExpansions } from "~/api/getExpansions";
@@ -33,12 +33,14 @@ export default function Index() {
                 className="flex-1 items-stretch"
                 role="listitem"
               >
-                <ExpansionCard
-                  name={set.name}
-                  series={set.series}
-                  releaseDate={set.releaseDate}
-                  image={set.images.logo}
-                />
+                <Link to={`/expansions/${set.id}`}>
+                  <ExpansionCard
+                    name={set.name}
+                    series={set.series}
+                    releaseDate={set.releaseDate}
+                    image={set.images.logo}
+                  />
+                </Link>
               </div>
             );
           })}
