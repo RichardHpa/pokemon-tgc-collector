@@ -29,9 +29,9 @@ exports[`Navbar > renders Navbar snapshot 1`] = `
         </a>
         <a
           class="inline-flex px-4 py-2 rounded justify-center items-center font-medium hover:underline text-gray-700 dark:text-white"
-          href="/sets"
+          href="/expansions"
         >
-          Sets
+          Expansions
         </a>
       </div>
       <div

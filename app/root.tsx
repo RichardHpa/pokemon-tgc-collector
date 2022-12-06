@@ -70,7 +70,9 @@ function App() {
       </head>
       <body className="flex h-full flex-col bg-white text-black dark:bg-gray-900 dark:text-gray-200">
         <Navbar />
-        <Outlet />
+        <div className="container mx-auto mt-4 pb-4">
+          <Outlet />
+        </div>
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

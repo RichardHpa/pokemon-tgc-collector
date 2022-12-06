@@ -45,6 +45,7 @@
     "clsx": "^1.2.1",
     "isbot": "^3.6.5",
     "lodash": "^4.17.21",
+    "pokemon-tcg-sdk-typescript": "^1.3.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "tiny-invariant": "^1.2.0"
